@@ -145,7 +145,7 @@ async function isReviewAutor(req,res,next){
 app.get("/",(req,res)=>{    
    
 
-   res.send("working fine"); 
+   res.redirect('/listings') 
     
 });
 
