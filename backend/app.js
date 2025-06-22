@@ -27,9 +27,12 @@ const User = require('./models/user.js');
 const multer = require("multer");
 const { error } = require('console');
 
-// Enable CORS for React frontend
+
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite default port
+  origin: [
+    'http://localhost:5173', // local dev
+    'https://be-explorer-com.vercel.app' // deployed Vercel 
+  ],
   credentials: true
 }));
 
