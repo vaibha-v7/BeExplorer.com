@@ -141,6 +141,13 @@ async function isReviewAutor(req,res,next){
 
 }
 
+app.get('/ping', (req, res) => {
+  res.status(200).send('OK');
+});
+
+
+
+
 app.get("/",(req,res)=>{    
    
 
