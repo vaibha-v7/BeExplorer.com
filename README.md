@@ -1,4 +1,4 @@
-# PropertyHub - React Frontend with Node.js Backend
+# BeExplorer - React Frontend with Node.js Backend
 
 A modern property listing website built with React frontend and Node.js backend with MongoDB.
 
