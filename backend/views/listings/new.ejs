@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE New</title>
+</head> -->
+<% layout("/layout/boilerplate") %>
+<body>
+
+    <h1 class="offset-2">CREATE A NEW LISTING</h1>
+    <br>
+    
+    <div class="text row">
+        
+        <div class="col-8 offset-2">
+
+        
+
+    <form action="/listings/new" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="">
+
+        
+        <label for="title" class="form-label">Title</label>
+        <input class="form-control border-dark" type="text" name="title" placeholder="Enter title" id="" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <br>
+    </div>
+
+        <div  class="">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control border-dark" type="text" name="description" placeholder="Enter Description" id="" required></textarea>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <br>
+    </div>
+
+        <!-- <div class="">
+            <label for="image" class="form-label">Image URL</label>
+            <input class="form-control border-dark" type="text" name="image" placeholder="Enter img url https://" id=""
+                required>
+            <div class="invalid-feedback">
+                Enter a valid URL
+            </div>
+            <br>
+        </div> -->
+        <!-- cloud for img -->
+        <div class="">
+            <label for="image" class="form-label">Uplaod Image</label>
+            <input class="form-control border-dark" type="file" name="image" id=""
+                required>
+            <div class="invalid-feedback">
+                Upload a photo
+            </div>
+            <br>
+        </div>
+
+        <div class="row">
+
+        
+
+        <div class=" col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input class="form-control border-dark" type="number" name="price" placeholder="Enter price" id="" required>
+        <div class="invalid-feedback">
+            Enter a valid Price
+        </div>
+        <br>
+    </div>
+
+        <div class=" col-md-8">
+
+        <label for="location" class="form-label">Location</label>
+        <input class="form-control border-dark" type="text" name="location" placeholder="Enter location" id="" required>
+        <div class="invalid-feedback">
+            Enter a valid Location
+        </div>
+        <br>
+    </div>
+
+
+        </div>
+
+        <div class="">
+        <label for="country" class="form-label">Country</label>
+        <input class="form-control border-dark" type="text" name="country" placeholder="Enter country" id="" required>
+        <div class="invalid-feedback">
+            Enter a valid Country
+        </div>
+        <br>
+    </div>
+        <button class="btn btn-dark">Submit</button>
+        <br>
+    </form>
+    <br>
+    <form action="/listings"><button class="btn btn-dark" style="background-color: #fe424d; border: none;">
+        Go Back
+    </button></form>
+    <br>
+    
+</div>
+</div>
+</body>
+<!-- </html> -->

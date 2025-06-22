@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# IDE settings
+.vscode/
+.idea/
+
+# React specific
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Coverage reports
+coverage/
+
+# Misc
+*.tgz
+*.gz
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# MongoDB
+dump/
+
+# Optional: if you're using next.js or other frameworks
+.next/
+out/

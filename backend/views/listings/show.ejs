@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACE</title>
+</head> -->
+<% layout("/layout/boilerplate") %>
+
+
+
+    <div class="row    mt-3 ">
+        <div class="col-8 text-center mx-auto  mb-2">
+            <h2 class="">
+                <%= place.title %>
+            </h2>
+        </div>
+
+
+
+
+        <div class="col-12 col-sm-9 col-md-8 col-lg-6 mx-auto show-card">
+
+
+            <div class="card ">
+                <img style="border-radius: 1rem !important;" src="<%=place.image.url %>" class="card-img-top show-img"
+                    alt="...">
+                <div class="card-body">
+
+                    <ul>
+
+                        <!-- <h5 class=" p-0 mb-2">TITLE:<%= place.title %>
+            </h5><br> -->
+                        <li class="mb-2 p-0 ">Owner by <%= place.owner.username%>
+                                </p>
+                        <li class="mb-2 p-0 ">DESCRIPTION:<%= place.description %>
+                        </li>
+
+                        <li class="p-0 mb-2">PRICE: &#8377;<%= place.price.toLocaleString("en-IN") %>/Night
+                        </li>
+                        <li class="mb-2 p-0">LOCATION:<%= place.location %>
+                        </li>
+                        <li class="mb-2 p-0">COUNTRY:<%= place.country %>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <a class="btn btn-dark" href="/listings">Go Back</a><br> <br>
+
+            <%if(currentUser && currentUser._id.equals(place.owner._id)) {%>
+                <a class="btn btn-dark border" href="/listings/<%=place._id%>/edit">Edit</a>
+
+                <form method="post" class="btn btn-dark text"
+                    style="background-color:#fe424d; border: none; scale: 0.8;"
+                    action="/listings/<%=place._id%>/delete?_method=DELETE"><Button class="btn btn-dark"
+                        style="background-color:#fe424d; border: none;">Delete</Button></form>
+                <br>
+                <br>
+                <%}%>
+
+        </div>
+
+        <div class="col-8 text-center mx-auto  mb-2">
+            <% if(currentUser) {%>
+                <h4>Leave a review</h4>
+                <form action="/listings/<%=place._id%>/review" method="POST" novalidate class="needs-validation">
+                    <div>
+                        <label class="form-label" for="rating">Rating</label>
+                        <!-- <input class="form-range" type="range" name="rating" id="rating" min="1" max="5"> -->
+                    </div>
+                    <fieldset class="starability-growRotate">
+                        <legend>First rating:</legend>
+                        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked
+                            aria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="rating" value="1" />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="rating" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="rating" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="rating" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="rating" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                    <div>
+                        <label class="form-label" for="comment">Comments</label>
+                        <textarea class="form-control border-dark" name="comment" id="comment" required></textarea>
+                        <div class="invalid-feedback">
+                            <p class="fw-bold">Add a comment</p>
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-dark">Submit</button>
+
+                </form>
+                <% } %>
+
+                    <hr>
+
+                    <h4>Reviews</h4>
+                    <!-- <ul>
+
+                <% for(let i=0 ;i<place.review.length;i++){ %>
+                    <li>
+                        <%= place.review[i].comment %> &nbsp; <%=place.review[i].rating %>-stars
+                    </li>
+
+                    <% } %>
+            </ul> -->
+
+
+                    <div class="row">
+
+                        <% for(let i=0 ;i<place.review.length;i++){ %>
+                            <div class="card"
+                                style="background-color:rgba(245, 245, 220, 0.671); margin: 5px;  width: 17rem;">
+                                <div class="card-body d-flex flex-column" style="height: 100%;">
+                                    <h5 class="card-title">
+                                        <!-- <%=place.review[i].rating %>-Star -->
+                                            <p class="starability-result  m-auto" data-rating="<%=place.review[i].rating %>">
+                                                
+                                            </p>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">by
+                                        <%=place.review[i].author.username%>
+                                    </h6>
+                                    <p class="card-text">
+                                        <%= place.review[i].comment %>
+                                    </p>
+                                    <!-- <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a> -->
+                                    <div class="mt-auto">
+                                        <form
+                                            action="/listings/<%=place._id%>/review/<%=place.review[i]._id%>?_method=DELETE"
+                                            method="POST">
+                                            <button class="btn btn-primary mt-auto">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+
+
+
+                    </div>
+
+
+
+
+        </div>
+    </div>

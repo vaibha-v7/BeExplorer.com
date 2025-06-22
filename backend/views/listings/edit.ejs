@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT</title>
+</head> -->
+<% layout("/layout/boilerplate") %>
+<body>
+
+    <div class="row">
+
+        <div class=" edit col-8 offset-2">
+
+
+        
+
+
+    
+    <h1>EDIT THE PLACE</h1>
+    <br>
+    <form action="/listings/<%=place._id%>/edit?_method=PATCH" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+
+
+        <div class="mb-1">
+
+        
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" value="<%=place.title  %>" id="" class="form-control border-dark" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <br>
+        </div>
+
+
+        <div class="mb-1">
+        <label for="description" class="form-label">Description</label>
+        <textarea type="text" name="description"value="<%=place.description  %>" placeholder="Enter Description" id="" class="form-control border-dark" required><%=place.description  %></textarea>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <br>
+        </div>
+
+
+        <div class="mb-1">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input type="file" name="image" value="" placeholder="" id="" class="form-control border-dark" > 
+        <div class="invalid-feedback">
+            Upload a photo
+        </div>
+        <br>
+        </div>
+
+
+
+
+
+
+        <div class="row">
+
+        
+
+        <div class="mb-1 col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" name="price" value="<%=place.price  %>" placeholder="Enter price" id="" class="form-control border-dark" required>
+        <div class="invalid-feedback text">
+           Enter valid Price
+        </div>
+        <br>
+        </div>
+
+
+        <div class="mb-1 col-md-8">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" name="location" value="<%=place.location  %>" placeholder="Enter location" id="" class="form-control border-dark" required>
+        <div class="invalid-feedback">
+            Enter valid Location
+        </div>
+        <br>
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="mb-1">
+
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="country" value="<%=place.country  %>" placeholder="Enter country" id="" class="form-control border-dark" required>
+        <div class="invalid-feedback">
+            Enter valid URL
+        </div>
+        <br>
+        </div>
+        <br>
+        <button class="btn btn-dark" style="font-family: Plus Jakarta Sans">Submit</button>
+    </form>
+
+    
+    <br>
+    <form action="/listings"><button class="btn btn-dark" style="background-color: #fe424d; border: none; font-family: Plus Jakarta Sans">
+        Go Back
+    </button></form>
+    <br>
+    
+
+    </div>
+</div>
+</body>
+
+<!-- </html> -->

@@ -1,0 +1,108 @@
+.footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px 1rem;
+}
+
+.social-media-section {
+  margin-bottom: 1.5rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 0.5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.social-btn:hover {
+  background-color: white;
+  color: #212529;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn i {
+  font-size: 1.2rem;
+}
+
+.copyright-section {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright-section p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.company-name {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 1.5rem 15px 0.5rem;
+  }
+  
+  .social-btn {
+    width: 35px;
+    height: 35px;
+    margin: 0 0.3rem;
+  }
+  
+  .social-btn i {
+    font-size: 1rem;
+  }
+  
+  .copyright-section {
+    padding: 0.8rem;
+  }
+  
+  .copyright-section p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 1rem 10px 0.5rem;
+  }
+  
+  .social-btn {
+    width: 32px;
+    height: 32px;
+    margin: 0 0.2rem;
+  }
+  
+  .social-btn i {
+    font-size: 0.9rem;
+  }
+  
+  .copyright-section {
+    padding: 0.6rem;
+  }
+  
+  .copyright-section p {
+    font-size: 0.75rem;
+  }
+} 
