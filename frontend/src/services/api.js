@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: 'http://localhost:3000', // Backend server port
+  baseURL: 'https://beexplorer-com-piws.onrender.com/listings', // Backend server port
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
