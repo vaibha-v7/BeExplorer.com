@@ -1,13 +1,12 @@
 import axios from 'axios';
 
-// Create axios instance with base URL
 const api = axios.create({
-  baseURL: 'https://beexplorer-com-piws.onrender.com/listings', // Backend server port
+  baseURL: 'https://beexplorer-com-piws.onrender.com',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
-  withCredentials: true, // Send cookies for session
+  withCredentials: true,
 });
 
 // API service functions
@@ -16,13 +15,12 @@ export const listingService = {
   getAllListings: async () => {
     try {
       const response = await api.get('/api/listings');
-      return response.data.data; // Return the data array from the response
+      return response.data.data;
     } catch (error) {
       throw new Error(error.response?.data?.message || 'Failed to fetch listings');
     }
   },
 
-  // Get single listing by ID
   getListingById: async (id) => {
     try {
       const response = await api.get(`/api/listings/${id}`);
@@ -32,10 +30,8 @@ export const listingService = {
     }
   },
 
-  // Create new listing with image upload
   createListing: async (listingData) => {
     try {
-      // Create FormData for file upload
       const formData = new FormData();
       formData.append('title', listingData.title);
       formData.append('description', listingData.description);
@@ -43,7 +39,6 @@ export const listingService = {
       formData.append('location', listingData.location);
       formData.append('country', listingData.country);
       formData.append('image', listingData.image);
-
       const response = await api.post('/api/listings/new', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -55,7 +50,7 @@ export const listingService = {
     }
   },
 
-  // Update listing
+
   updateListing: async (id, listingData) => {
     try {
       const response = await api.patch(`/listings/${id}/edit`, listingData);
@@ -65,7 +60,7 @@ export const listingService = {
     }
   },
 
-  // Delete listing
+
   deleteListing: async (id) => {
     try {
       const response = await api.delete(`/listings/${id}/delete`);
@@ -76,7 +71,7 @@ export const listingService = {
   },
 };
 
-// Review service functions
+
 export const reviewService = {
   // Add a review to a listing
   addReview: async (listingId, reviewData) => {
@@ -88,7 +83,7 @@ export const reviewService = {
     }
   },
 
-  // Delete a review
+
   deleteReview: async (listingId, reviewId) => {
     try {
       const response = await api.delete(`/api/listings/${listingId}/review/${reviewId}`);
@@ -99,7 +94,7 @@ export const reviewService = {
   },
 };
 
-// Auth service functions
+
 export const authService = {
   signup: async (userData) => {
     const response = await api.post('/api/signup', userData);
